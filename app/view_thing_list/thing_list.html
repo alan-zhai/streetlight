@@ -1,0 +1,97 @@
+<div ng-init="init()">
+    <div class="row">
+        <div style="width:980px; margin: 0 auto;">
+            <!-- Location dashboard Start -->
+            <div class="panel panel-default dashboard_panel" style="margin: 0 auto; margin-top: 10px; margin-right:100; width:100%">
+                <!-- dashboard header -->
+                <div class="panel-heading" style="color:#fff; background:#438ac7;">
+                    <h2 class="panel-title">Thing List</h2>
+                </div>
+                <!-- dashboard body -->
+                <div class="panel-body" >
+
+                    <!-- Thing Single Form Start -->
+
+                    <h4>Add Light</h4>
+
+                    <!-- district -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <label class="dashboard_field_name">District</label>
+                        <select class="form-control dashboard_field_input" ng-model="thingSingleForm.district" ng-change="onChangeDistrictInThingSingleForm(thingSingleForm.district)">
+                            <option style="padding:5px" ng-repeat="district in thingSingleForm.districtList">{{district}}</option>
+                        </select>
+                    </div>
+
+                    <!-- area -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <label class="dashboard_field_name">Area</label>
+                        <select class="form-control dashboard_field_input" ng-model="thingSingleForm.area">
+                            <option style="padding:5px" ng-repeat="area in thingSingleForm.areaList">{{area}}</option>
+                        </select>
+                    </div>
+
+                    <!-- vendor thing id (LED) -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <label class="dashboard_field_name" >Vendor Thing ID</label>
+                        <input type="text" class="form-control dashboard_field_input" ng-model="thingSingleForm.vendorThingID" />
+                    </div>
+
+
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <button class="btn btn-primary dashboard_button" ng-click="onClickSaveThing(thingSingleForm)">Save</button>
+                    <div class="form-group col-lg-12 dashboard_row" >
+
+                    <!-- Thing Single Form End -->
+
+                    <!-- line -->
+                    <hr style="width:100%" />
+
+                    <!-- Thing Table Form Start -->
+                    
+                    <h4>Thing List</h4>
+                    
+                    <!-- Thing list -->
+                    <table class="table table-bordered table-striped table-hover dashboard_field_input" style="margin-bottom: -10px; width:900px; height:300px; " >
+                        <thead style="color:#fff; background:#438ac7;"><tr>
+                            <th style="width: 30%">District</th>
+                            <th style="width: 30%">Area</th>
+                            <th style="width: 40%">VendorThingID / GloablThingID / Onboarded</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <!-- district -->
+                                <td style="padding:0px; height:100%">
+                                    <select multiple style="width:100%; height:100%; border:0px" ng-model="thingTableForm.district">
+                                        <option style="padding:5px" ng-repeat="element in thingTableForm.districtList" ng-click="onClickDistrictInThingTableForm()">{{element}}</option>
+                                    </select>
+                                </td>
+                                <!-- area -->
+                                <td style="padding:0px">
+                                    <select multiple style="width:100%; height:100%; border:0px" ng-model="thingTableForm.area">
+                                        <option style="padding:5px" ng-repeat="element in thingTableForm.areaList" ng-click="onClickAreaInThingTableForm()">{{element}}</option>
+                                    </select>
+                                </td>
+                                <!-- vendor thing id -->
+                                <!-- global thing id -->
+                                <td style="padding:0px">
+                                    <select multiple style="width:100%; height:100%; border:0px">
+                                        <option style="padding:5px" ng-repeat="element in thingTableForm.thingList" ng-click="onClickThingInThingTableForm(element)">{{element.vendorThingID}} / {{element.globalThingID}} / {{element.full_kii_thing_id.length > 0}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Thing Table Form End -->
+
+                    <!-- dividing -->
+                    <div class="form-group col-lg-12 dashboard_row" style="margin-bottom:10px" >
+                    </div>
+
+                </div>
+            </div>
+            <!-- Location dashboard End -->
+
+        </div>
+    </div>
+</div>

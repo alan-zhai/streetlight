@@ -1,0 +1,46 @@
+<div ng-init="init()">
+    <div class="row">
+        <div style="width:980px; margin: 0 auto;">
+            <!-- Location dashboard Start -->
+            <div class="panel panel-default dashboard_panel" style="margin: 0 auto; margin-top: 10px; margin-right:100; width:100%">
+                <!-- dashboard header -->
+                <div class="panel-heading" style="color:#fff; background:#438ac7;">
+                    <h2 class="panel-title">Location List</h2>
+                </div>
+                <!-- dashboard body -->
+                <div class="panel-body" >
+                    <!-- location box -->
+                    <table class="table table-bordered table-striped table-hover dashboard_field_input" style="margin-bottom: -10px; width:900px; height:300px; " >
+                        <thead style="color:#fff; background:#438ac7;"><tr>
+                            <th style="width: 50%">District</th>
+                            <th style="width: 50%">Area</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr>
+                                <!-- district -->
+                                <td style="padding:0px; height:100%">
+                                    <select multiple style="width:100%; height:100%; border:0px">
+                                        <option style="padding:5px" ng-repeat="district in districtList" ng-click="onClickDistrict(district)">{{district}}</option>
+                                    </select>
+                                </td>
+                                <!-- area -->
+                                <td style="padding:0px">
+                                    <select multiple style="width:100%; height:100%; border:0px" >
+                                        <option style="padding:5px" ng-repeat="area in areaList" ng-click="onClickArea(area)">{{area}}</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- dividing -->
+                    <div class="form-group col-lg-12 dashboard_row" style="margin-bottom:10px" >
+                    </div>
+
+                </div>
+            </div>
+            <!-- Location dashboard End -->
+
+        </div>
+    </div>
+</div>

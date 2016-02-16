@@ -1,0 +1,66 @@
+<div ng-init="init()">
+    <div class="row">
+        <div style="width:980px; margin: 0 auto;">
+            <!-- Location dashboard Start -->
+            <div class="panel panel-default dashboard_panel" style="margin: 0 auto; margin-top: 10px; margin-right:100; width:100%">
+                <!-- dashboard header -->
+                <div class="panel-heading" style="color:#fff; background:#438ac7;">
+                    <h2 class="panel-title">Thing List</h2>
+                </div>
+                <!-- dashboard body -->
+                <div class="panel-body" >
+
+                    <!-- Onboarding Info Form Start -->
+
+                    <!-- vendor thing id -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <label class="dashboard_field_name" >Vendor Thing ID</label>
+                        <input type="text" class="form-control dashboard_field_input" ng-model="vendorThingID" />
+                    </div>
+
+                    <!-- search button -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <button class="btn btn-primary dashboard_button" ng-click="onClickSearch(vendorThingID)">Search</button>
+                    <div class="form-group col-lg-12 dashboard_row" >
+
+                    <hr>
+
+                    <!-- onboarding info -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <label class="dashboard_field_name">Onboarding Info</label>
+                        <table class="table table-bordered table-striped table-hover dashboard_field_input" style="margin-bottom: -10px; width:800px;" >
+                            <thead style="color:#fff; background:#438ac7;"><tr>
+                                <th style="width: 20%">Key</th>
+                                <th style="width: 80%">Value</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr ng-repeat="key in onboardingInfoFields">
+                                    <td>
+                                        {{key}}
+                                    </td>
+                                    <td>
+                                        {{onboardingInfo[key]}}
+                                    </td>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- quick onboarding button -->
+                    <div class="form-group col-lg-12 dashboard_row" >
+                        <button class="btn btn-primary dashboard_button" ng-show="onboardingInfoFields.length>0" ng-click="onClickQuickOnboarding(onboardingInfo)">Quick Onboarding</button>
+                    <div class="form-group col-lg-12 dashboard_row" >
+
+                    <!-- Onboarding Info Form End -->
+
+                    <!-- dividing -->
+                    <div class="form-group col-lg-12 dashboard_row" style="margin-bottom:10px" >
+                    </div>
+
+                </div>
+            </div>
+            <!-- Location dashboard End -->
+
+        </div>
+    </div>
+</div>
